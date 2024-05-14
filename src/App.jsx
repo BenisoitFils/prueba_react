@@ -15,12 +15,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>¡Bienvenido a la PokéAPI!</h1>
-        <MiApi handlePokemonClick={handlePokemonClick} setPokemonList={setPokemonList} />
         <Buscador pokemonList={pokemonList} handlePokemonClick={handlePokemonClick} />
+        <MiApi pokemonList={pokemonList} setPokemonList={setPokemonList} handlePokemonClick={handlePokemonClick} />
+        
       </header>
     </div>
   );
 }
 
 export default App;
-

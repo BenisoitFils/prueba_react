@@ -12,7 +12,7 @@ const MiApi = ({ handlePokemonClick, setPokemonList }) => {
         const data = await response.json();
         const sortedPokemonList = data.results.sort((a, b) => (a.name > b.name ? 1 : -1));
         setLocalPokemonList(sortedPokemonList);
-        setPokemonList(sortedPokemonList); // Update the parent component with the fetched data
+        setPokemonList(sortedPokemonList);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -84,5 +84,3 @@ const MiApi = ({ handlePokemonClick, setPokemonList }) => {
 };
 
 export default MiApi;
-
-

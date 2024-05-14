@@ -2,22 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 const Buscador = ({ pokemonList, handlePokemonClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredPokemonList, setFilteredPokemonList] = useState([]);
-
-  useEffect(() => {
-    const filterPokemonList = () => {
-      const filteredList = pokemonList.filter((pokemon) =>
-        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setFilteredPokemonList(filteredList);
-    };
-
-    filterPokemonList();
-  }, [searchTerm, pokemonList]);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  const filteredPokemonList = pokemonList.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div>
@@ -40,8 +32,3 @@ const Buscador = ({ pokemonList, handlePokemonClick }) => {
 };
 
 export default Buscador;
-
-
-
-
-
